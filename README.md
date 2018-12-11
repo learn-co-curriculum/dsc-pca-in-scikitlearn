@@ -7,7 +7,7 @@ In this lesson, we'll look at implementing PCA in scikit-learn. Upto this point,
 ## Objectives
 You will be able to:
 * Implement PCA algorithm using sci-kit learn library 
-* Extract and visualize principle components and their explained variance
+* Extract and visualize principal components and their explained variance
 * Reduce the number of dimensions for a given dataset using PCA 
 
 
@@ -53,7 +53,7 @@ Using Scikit-Learn's ``PCA`` estimator, we can compute this as follows:
 ```python
 # Create a PCA instance and fit the data 
 from sklearn.decomposition import PCA
-pca = PCA(n_components=2) # Number of principle components required
+pca = PCA(n_components=2) # Number of principal components required
 pca.fit(X)
 ```
 
@@ -68,7 +68,7 @@ pca.fit(X)
 ## PCA Results
 
 The `fit` method learns two key quantities from the data:
-* Principle components 
+* Principal components 
 * Explained Variance
 
 Below is how we extract them from a learned PCA model. 
@@ -93,9 +93,9 @@ print(pca.explained_variance_)
     [ 0.75871884  0.01838551]
 
 
-Based on above, the total variance explained by both principle components is around 0.77. 
+Based on above, the total variance explained by both principal components is around 0.77. 
 
-## Visualize Principle Components - Optional
+## Visualize Principal Components - Optional
 
 This step is not mandatory while running PCA. Visualizing the components here is aimed to provide you with a intuition for the process. 
 
@@ -103,7 +103,7 @@ We can visualize the quantities above to see what they mean. We can plot them th
 
 
 ```python
-# Draw the principle comnents on top of scatter plot 
+# Draw the principal comnents on top of scatter plot 
 def draw_vector(v0, v1, ax=None):
     ax = ax or plt.gca()
     arrowprops=dict(arrowstyle='->',
@@ -140,17 +140,13 @@ Here is an example of using PCA as a dimensionality reduction transform:
 
 
 ```python
-## Compute only the first principle component
+## Compute only the first principal component
 pca = PCA(n_components=1)
 pca.fit(X)
 X_pca = pca.transform(X)
 print("original shape:   ", X.shape)
 print("transformed shape:", X_pca.shape)
 ```
-
-    original shape:    (200, 2)
-    transformed shape: (200, 1)
-
 
 ### Inverse Transformation
 
@@ -179,4 +175,4 @@ This makes clear what a PCA dimensionality reduction means.
 PCA's main weakness is that it tends to be highly affected by outliers in the data. For this reason, many robust variants of PCA have been developed, many of which act to iteratively discard data points that are poorly described by the initial components. Scikit-Learn contains a couple interesting variants on PCA, including `RandomizedPCA` and `SparsePCA`, both also in the `sklearn.decomposition` submodule.` RandomizedPCA` uses a non-deterministic method to quickly approximate the first few principal components in very high-dimensional data, while `SparsePCA` introduces a regularization term that serves to enforce sparsity of the components.
 
 ##  Summary
-In this lesson, we looked at implementing PCA with scikit-learn. We looked creating instances of PCA while defining number of required components. We also visualized and explained the principle components and their meaning. Dimensionality reduction involves dropping one or more such components which describe the data variance at minimum. Finally we looked at some PCA variations offered by scikit-learn for special cases. 
+In this lesson, we looked at implementing PCA with scikit-learn. We looked creating instances of PCA while defining number of required components. We also visualized and explained the principal components and their meaning. Dimensionality reduction involves dropping one or more such components which describe the data variance at minimum. Finally we looked at some PCA variations offered by scikit-learn for special cases. 
