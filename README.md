@@ -1,12 +1,12 @@
 
-# Principal Component Analysis in Scikit-Learn
+# Principal Component Analysis in scikit-learn
 
 ## Introduction
 In this lesson, we'll look at implementing PCA in scikit-learn. Upto this point, we have developed an intuition behid the process involved in PCA and also coded it from scratch in Numpy. Scikit-learn takes away most of the calculations from analysis as its PCA module offers them under the hood. 
 
 ## Objectives
 You will be able to:
-* Implement PCA algorithm using sci-kit learn library 
+* Implement PCA algorithm using scikit-learn library 
 * Extract and visualize principal components and their explained variance
 * Reduce the number of dimensions for a given dataset using PCA 
 
