@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Now that you've seen the curse of dimensionality, it's time to take a look at a dimensionality reduction technique! This will help you overcome the challenges of the curse of dimensionality (amongst other things). Essentially, PCA, or Prinicple Component Analysis, attempts to capture as much information of the dataset as possible while reducing the overall number of features.
+Now that you've seen the curse of dimensionality, it's time to take a look at a dimensionality reduction technique! This will help you overcome the challenges of the curse of dimensionality (amongst other things). Essentially, PCA, or Principal Component Analysis, attempts to capture as much information of the dataset as possible while reducing the overall number of features.
 
 ## Objectives
 
@@ -46,7 +46,7 @@ plt.scatter(x1,x2);
 ```
 
 
-![png](index_files/index_6_0.png)
+![png](index_files/index_4_0.png)
 
 
 ## Performing PCA with sci-kit learn
@@ -69,7 +69,7 @@ plt.scatter(transformed[:,0], transformed[:,1]);
 ```
 
 
-![png](index_files/index_10_0.png)
+![png](index_files/index_8_0.png)
 
 
 
@@ -114,7 +114,7 @@ plt.plot([ax2,ax3], [ay2,ay3], color='red');
 ```
 
 
-![png](index_files/index_14_0.png)
+![png](index_files/index_12_0.png)
 
 
 So the updated graph you saw, is the same dataset rotated onto these red axes:
@@ -134,7 +134,7 @@ plt.axvline(color='red')
 
 
 
-![png](index_files/index_16_1.png)
+![png](index_files/index_14_1.png)
 
 
 Note the small scale of the y-axis. You can also plot the transformed dataset on the new axes with a scale similar to what you saw before:
@@ -155,7 +155,7 @@ plt.ylim(-10,10)
 
 
 
-![png](index_files/index_18_1.png)
+![png](index_files/index_16_1.png)
 
 
 Again, this is the geographical interpretation of what just happened:  
@@ -202,7 +202,7 @@ plt.scatter(x1,x2, c=sns.color_palette('RdBu', n_colors=100));
 ```
 
 
-![png](index_files/index_25_0.png)
+![png](index_files/index_23_0.png)
 
 
 
@@ -218,7 +218,7 @@ plt.scatter(transformed[:,0], [0 for i in range(100)] , c=sns.color_palette('RdB
 
 
 
-![png](index_files/index_26_1.png)
+![png](index_files/index_24_1.png)
 
 
 ## Steps for Performing PCA
