@@ -26,7 +26,7 @@ x1 = np.linspace(-10, 10, 100)
 # A linear relationship, plus a little noise
 x2 = np.array([xi*2 + np.random.normal(loc=0, scale=0.5) for xi in x1]) 
 
-X = np.matrix(list(zip(x1, x2)))
+X = np.asarray(list(zip(x1, x2)))
 ```
 
 Let's also generate a quick plot of this simple dataset to further orient ourselves:
@@ -43,7 +43,9 @@ plt.scatter(x1, x2);
 ```
 
 
+    
 ![png](index_files/index_3_0.png)
+    
 
 
 ## PCA with scikit-learn
@@ -66,7 +68,9 @@ plt.scatter(transformed[:,0], transformed[:,1]);
 ```
 
 
+    
 ![png](index_files/index_7_0.png)
+    
 
 
 
@@ -77,8 +81,8 @@ pca.components_
 
 
 
-    array([[ 0.44712728,  0.89447035],
-           [-0.89447035,  0.44712728]])
+    array([[-0.4479312 , -0.89406803],
+           [ 0.89406803, -0.4479312 ]])
 
 
 
@@ -90,7 +94,7 @@ pca.mean_
 
 
 
-    array([7.10542736e-17, 2.61587597e-02])
+    array([ 7.10542736e-17, -1.72548498e-02])
 
 
 
@@ -111,7 +115,9 @@ plt.plot([ax2, ax3], [ay2, ay3], color='red');
 ```
 
 
+    
 ![png](index_files/index_11_0.png)
+    
 
 
 So, the updated graph you saw is the same dataset rotated onto these red axes:
@@ -124,7 +130,9 @@ plt.axvline(color='red');
 ```
 
 
+    
 ![png](index_files/index_13_0.png)
+    
 
 
 Note the small scale of the y-axis. You can also plot the transformed dataset on the new axes with a scale similar to what you saw before:
@@ -138,7 +146,9 @@ plt.ylim(-10,10);
 ```
 
 
+    
 ![png](index_files/index_15_0.png)
+    
 
 
 Again, this is the geographical interpretation of what just happened:  
@@ -157,7 +167,7 @@ pca.explained_variance_ratio_
 
 
 
-    array([9.99717770e-01, 2.82229957e-04])
+    array([9.99760273e-01, 2.39727247e-04])
 
 
 
@@ -171,7 +181,7 @@ np.cumsum(pca.explained_variance_ratio_)
 
 
 
-    array([0.99971777, 1.        ])
+    array([0.99976027, 1.        ])
 
 
 
@@ -185,7 +195,9 @@ plt.scatter(x1,x2, c=sns.color_palette('RdBu', n_colors=100));
 ```
 
 
+    
 ![png](index_files/index_22_0.png)
+    
 
 
 
@@ -194,7 +206,9 @@ plt.scatter(transformed[:,0], [0 for i in range(100)] , c=sns.color_palette('RdB
 ```
 
 
+    
 ![png](index_files/index_23_0.png)
+    
 
 
 ## Steps for Performing PCA
@@ -218,7 +232,7 @@ pca.mean_
 
 
 
-    array([7.10542736e-17, 2.61587597e-02])
+    array([ 7.10542736e-17, -1.72548498e-02])
 
 
 
@@ -231,8 +245,8 @@ pca.get_covariance()
 
 
 
-    array([[ 34.35023637,  68.62012556],
-           [ 68.62012556, 137.32181974]])
+    array([[ 34.35023637,  68.48100943],
+           [ 68.48100943, 136.72870423]])
 
 
 
@@ -245,8 +259,8 @@ pca.components_
 
 
 
-    array([[ 0.44712728,  0.89447035],
-           [-0.89447035,  0.44712728]])
+    array([[-0.4479312 , -0.89406803],
+           [ 0.89406803, -0.4479312 ]])
 
 
 
